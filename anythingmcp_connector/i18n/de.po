@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* anythingmcp_connector
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-29 18:50+0000\n"
+"PO-Revision-Date: 2026-10-29 18:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: \n"
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid "AI Assistants"
+msgstr "KI-Assistenten"
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid "AnythingMCP then shows how to add it to Claude, ChatGPT or Copilot."
+msgstr "AnythingMCP zeigt dir danach, wie du es in Claude, ChatGPT oder Copilot hinzufügst."
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid ""
+"Ask your AI assistant about invoices, sales orders, customers and products "
+"in this Odoo, through AnythingMCP."
+msgstr "Frag deinen KI-Assistenten nach Rechnungen, Verkaufsaufträgen, Kunden und Produkten in diesem Odoo, über AnythingMCP."
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid "Claude, ChatGPT and Copilot"
+msgstr "Claude, ChatGPT und Copilot"
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid "Create an API key"
+msgstr "API-Schlüssel erstellen"
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid ""
+"Create an API key for your user. Choose the longest duration offered: Odoo "
+"shows the key only once."
+msgstr "Erstelle einen API-Schlüssel für deinen Benutzer. Wähle die längste angebotene Laufzeit: Odoo zeigt den Schlüssel nur einmal an."
+
+#. module: anythingmcp_connector
+#: model:ir.model.fields,field_description:anythingmcp_connector.field_res_config_settings__anythingmcp_database
+msgid "Database name"
+msgstr "Datenbankname"
+
+#. module: anythingmcp_connector
+#: model:ir.model.fields,field_description:anythingmcp_connector.field_res_config_settings__anythingmcp_odoo_url
+msgid "Odoo address"
+msgstr "Odoo-Adresse"
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid "Open AnythingMCP"
+msgstr "AnythingMCP öffnen"
+
+#. module: anythingmcp_connector
+#: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
+msgid ""
+"Open AnythingMCP. The address and database are already filled in: paste the "
+"key and click \"Check and install\"."
+msgstr "Öffne AnythingMCP. Adresse und Datenbank sind schon ausgefüllt: Füge den Schlüssel ein und klicke auf \"Check and install\"."
+
+#. module: anythingmcp_connector
+#: model:ir.model.fields,field_description:anythingmcp_connector.field_res_config_settings__anythingmcp_user_id
+msgid "User ID"
+msgstr "Benutzer-ID"

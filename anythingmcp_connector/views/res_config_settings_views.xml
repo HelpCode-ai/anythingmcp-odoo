@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.anythingmcp</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='integration']" position="before">
+                <div id="anythingmcp">
+                    <block title="AI Assistants" name="anythingmcp_setting_container">
+                        <setting id="anythingmcp_setting" string="Claude, ChatGPT and Copilot"
+                                 help="Ask your AI assistant about invoices, sales orders, customers and products in this Odoo, through AnythingMCP.">
+                            <div class="content-group mt16">
+                                <div class="row">
+                                    <label for="anythingmcp_odoo_url" class="col-lg-4 o_light_label"/>
+                                    <field name="anythingmcp_odoo_url" class="col-lg-8"/>
+                                </div>
+                                <div class="row">
+                                    <label for="anythingmcp_database" class="col-lg-4 o_light_label"/>
+                                    <field name="anythingmcp_database" class="col-lg-8"/>
+                                </div>
+                                <div class="row" invisible="not anythingmcp_needs_user_id">
+                                    <label for="anythingmcp_user_id" class="col-lg-4 o_light_label"/>
+                                    <field name="anythingmcp_user_id" class="col-lg-8"/>
+                                </div>
+                                <field name="anythingmcp_needs_user_id" invisible="1"/>
+                                <ol class="mt16 ps-3 text-muted">
+                                    <li>Create an API key for your user. Choose the longest duration offered: Odoo shows the key only once.</li>
+                                    <li>Open AnythingMCP. The address and database are already filled in: paste the key and click "Check and install".</li>
+                                    <li>AnythingMCP then shows how to add it to Claude, ChatGPT or Copilot.</li>
+                                </ol>
+                                <div class="mt8">
+                                    <button name="action_anythingmcp_new_api_key" type="object" icon="fa-key"
+                                            string="Create an API key" class="btn-secondary me-2"/>
+                                    <button name="action_anythingmcp_open_setup" type="object" icon="fa-external-link"
+                                            string="Open AnythingMCP" class="btn-primary"/>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

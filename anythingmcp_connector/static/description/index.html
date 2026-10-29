@@ -1,0 +1,75 @@
+<section class="oe_container" style="padding: 32px 16px;">
+    <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
+        <h2 style="text-align: center; color: #0f172a; font-weight: 700;">Use Odoo in Claude, ChatGPT and Copilot</h2>
+        <p style="text-align: center; font-size: 18px; color: #334155; max-width: 760px; margin: 12px auto 0;">
+            Ask your AI assistant about invoices, sales orders, customers and products, and get answers from your live Odoo data.
+            AnythingMCP connects Odoo to AI assistants over MCP (Model Context Protocol). This module sets it up from Odoo's Settings in three steps, without code.
+        </p>
+        <div style="text-align: center; margin-top: 28px;">
+            <img src="settings.png" alt="The AnythingMCP block in Odoo's General Settings" style="max-width: 100%; width: 620px; border: 1px solid #e2e8f0; border-radius: 8px;"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 24px 16px; background: #f8fafc;">
+    <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
+        <h3 style="color: #0f172a; font-weight: 700;">What you can ask</h3>
+        <ul style="font-size: 16px; color: #334155; line-height: 1.7;">
+            <li>"Which customer invoices are more than 30 days overdue? Draft a payment reminder for the largest."</li>
+            <li>"What did Keller &amp; Sohn order this year, and what is still to be delivered?"</li>
+            <li>"Which products sold best last month, and how many do we have in stock?"</li>
+            <li>"Create a quotation for Atelier Nord with two units of product X."</li>
+        </ul>
+        <p style="font-size: 15px; color: #475569;">
+            The assistant reads and writes through your own Odoo user and API key, so it sees and changes only what that user may.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 24px 16px;">
+    <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
+        <h3 style="color: #0f172a; font-weight: 700;">How it works</h3>
+        <ol style="font-size: 16px; color: #334155; line-height: 1.7;">
+            <li>Install the module and open <b>Settings → General Settings → AI Assistants</b>.</li>
+            <li>Click <b>Create an API key</b>. Odoo asks for your password and shows the new key once: copy it. On Odoo 18 and later, choose the longest duration offered.</li>
+            <li>Click <b>Open AnythingMCP</b>. Your Odoo address and database (and on Odoo 17 and 18 your user id) are already filled in. Paste the key and click <b>Check and install</b>. AnythingMCP checks the key against your Odoo before it saves anything.</li>
+            <li>Add AnythingMCP to Claude, ChatGPT or Copilot as shown at the end of the setup, and start asking.</li>
+        </ol>
+        <p style="font-size: 15px; color: #475569;">
+            On Odoo 19 and later AnythingMCP uses Odoo's JSON-2 API; on Odoo 17 and 18 the JSON-RPC API.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 24px 16px; background: #f8fafc;">
+    <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
+        <h3 style="color: #0f172a; font-weight: 700;">What the module does, and what it does not</h3>
+        <ul style="font-size: 16px; color: #334155; line-height: 1.7;">
+            <li>It adds the AI Assistants block to General Settings: your Odoo address, database name and user id, and the two buttons.</li>
+            <li>It sends nothing on its own. "Open AnythingMCP" opens a link that carries the address, database name and user id, never the API key.</li>
+            <li>It adds no models and changes no data. Uninstalling it removes the block; an API key you created stays under your user's Account Security until you revoke it.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 24px 16px;">
+    <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
+        <h3 style="color: #0f172a; font-weight: 700;">Requirements</h3>
+        <ul style="font-size: 16px; color: #334155; line-height: 1.7;">
+            <li>An AnythingMCP account. <a href="https://anythingmcp.com/pricing">AnythingMCP Cloud</a> runs in Frankfurt (EU): 7-day trial, then from €19 per month. AnythingMCP is also open source and can be <a href="https://github.com/HelpCode-ai/anythingmcp">self-hosted</a>; set the system parameter <code>anythingmcp_connector.url</code> to your instance's address.</li>
+            <li>Odoo 17, 18 or 19 (Community or Enterprise), self-hosted or on Odoo.sh. Your Odoo must be reachable over HTTPS from the internet for AnythingMCP Cloud.</li>
+            <li>On Odoo Online you cannot install third-party modules, but you do not need this one: follow the <a href="https://anythingmcp.com/guides/connect-odoo-to-claude">Odoo guide</a> and enter the same three values by hand.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 24px 16px; background: #eff6ff;">
+    <div class="oe_row" style="max-width: 960px; margin: 0 auto; text-align: center;">
+        <h3 style="color: #0f172a; font-weight: 700;">Support</h3>
+        <p style="font-size: 16px; color: #334155;">
+            Write to <a href="mailto:support@anythingmcp.com">support@anythingmcp.com</a> or read the guide at
+            <a href="https://anythingmcp.com/marketplace/odoo">anythingmcp.com/marketplace/odoo</a>.
+            Made by helpcode.ai GmbH, Freiburg, Germany.
+        </p>
+    </div>
+</section>
