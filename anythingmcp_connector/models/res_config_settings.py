@@ -34,8 +34,9 @@ class ResConfigSettings(models.TransientModel):
     def action_anythingmcp_open_setup(self):
         """Open the AnythingMCP setup with the address, database and user id filled in.
 
-        Only these three values go into the link. The API key is never part of
-        it: the user pastes it on the AnythingMCP page.
+        Only these values go into the link, with a marker that it comes from
+        this module. The API key is never part of it: the user pastes it on the
+        AnythingMCP page.
         """
         self.ensure_one()
         connector = self._anythingmcp_connector()
@@ -44,6 +45,8 @@ class ResConfigSettings(models.TransientModel):
         values = {
             "prefill.ODOO_URL": self._anythingmcp_odoo_url(),
             "prefill.ODOO_DB": self.env.cr.dbname,
+            # Lets AnythingMCP count the setups opened from this module.
+            "source": "odoo_module",
         }
         if connector == "odoo-jsonrpc":
             values["prefill.ODOO_UID"] = str(self.env.uid)
