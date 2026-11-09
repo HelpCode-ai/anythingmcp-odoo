@@ -6,8 +6,8 @@ in three steps:
 
 1. **Create an API key** opens Odoo's own dialog for a new API key of your user.
 2. **Open AnythingMCP** opens the AnythingMCP setup with your Odoo address, database name
-   and (on Odoo 17 and 18) user id already filled in. You paste the key there; it is never
-   part of the link.
+   and (on Odoo 17 and 18) user id already filled in, plus `source=odoo_module` so AnythingMCP
+   can count the setups opened from here. You paste the key there; it is never part of the link.
 3. AnythingMCP checks the key against your Odoo, then shows how to add it to your assistant.
 
 The module adds no models, stores nothing and calls no external service by itself.

@@ -26,6 +26,7 @@ class TestAnythingMcpSettings(TransactionCase):
         self.assertEqual(query["prefill.ODOO_URL"], ["https://acme.example.com"])
         self.assertEqual(query["prefill.ODOO_DB"], [self.env.cr.dbname])
         self.assertFalse(any("KEY" in name for name in query))
+        self.assertEqual(query["source"], ["odoo_module"])
         if version_info[0] >= 19:
             self.assertEqual(url.path, "/connectors/setup/odoo")
             self.assertNotIn("prefill.ODOO_UID", query)
