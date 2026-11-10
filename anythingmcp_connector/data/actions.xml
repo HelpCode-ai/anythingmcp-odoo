@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Server actions instead of Python methods: Odoo Online runs no
+         third-party Python, but runs server action code in its sandbox. -->
+    <record id="action_new_api_key" model="ir.actions.server">
+        <field name="name">Create an API key</field>
+        <field name="model_id" ref="base.model_res_config_settings"/>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[
+# Odoo's own dialog for a new API key of the current user, behind its
+# password check.
+action = env.user.api_key_wizard()
+]]></field>
+    </record>
+
+    <record id="action_open_setup" model="ir.actions.server">
+        <field name="name">Open AnythingMCP</field>
+        <field name="model_id" ref="base.model_res_config_settings"/>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[
+# Opens the AnythingMCP setup with this Odoo's address and database filled
+# in, plus a marker that the link comes from this module. The API key is
+# never part of it: the user pastes it on the AnythingMCP page.
+# Self-hosted AnythingMCP: set the system parameter anythingmcp_connector.url.
+params = env['ir.config_parameter'].sudo()
+base = (params.get_param('anythingmcp_connector.url') or 'https://cloud.anythingmcp.com').rstrip('/')
+values = [
+    ('prefill.ODOO_URL', (params.get_param('web.base.url') or '').rstrip('/')),
+    ('prefill.ODOO_DB', env.cr.dbname),
+    ('source', 'odoo_module'),
+]
+# Percent-encoding by hand: the sandbox has no urllib.
+unreserved = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~'
+pairs = []
+for name, value in values:
+    encoded = ''
+    for char in value:
+        if char in unreserved:
+            encoded += char
+        else:
+            for byte in char.encode('utf-8'):
+                encoded += '%%%02X' % byte
+    pairs.append(name + '=' + encoded)
+# Odoo 19 and newer (Odoo Online included) have the JSON-2 API, which is
+# AnythingMCP's "odoo" connector.
+action = {
+    'type': 'ir.actions.act_url',
+    'url': base + '/connectors/setup/odoo?' + '&'.join(pairs),
+    'target': 'new',
+}
+]]></field>
+    </record>
+</odoo>

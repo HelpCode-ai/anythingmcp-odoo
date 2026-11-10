@@ -30,13 +30,13 @@
     <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
         <h3 style="color: #0f172a; font-weight: 700;">How it works</h3>
         <ol style="font-size: 16px; color: #334155; line-height: 1.7;">
-            <li>Install the module and open <b>Settings &rarr; General Settings &rarr; AI Assistants</b>.</li>
-            <li>Click <b>Create an API key</b>. Odoo asks for your password and shows the new key once: copy it. On Odoo 18 and later, choose the longest duration offered.</li>
-            <li>Click <b>Open AnythingMCP</b>. Your Odoo address and database (and on Odoo 17 and 18 your user id) are already filled in. Paste the key and click <b>Check and install</b>. AnythingMCP checks the key against your Odoo before it saves anything.</li>
+            <li>Install the module and open <b>Settings &rarr; General Settings &rarr; AI Assistants</b>. On Odoo Online, download the module, turn on developer mode and upload the zip under <b>Apps &rarr; Import Module</b>.</li>
+            <li>Click <b>Create an API key</b>. Odoo asks for your password and shows the new key once: copy it. Choose the longest duration offered.</li>
+            <li>Click <b>Open AnythingMCP</b>. Your Odoo address and database are already filled in. Paste the key and click <b>Check and install</b>. AnythingMCP checks the key against your Odoo before it saves anything.</li>
             <li>Add AnythingMCP to Claude, ChatGPT or Copilot as shown at the end of the setup, and start asking.</li>
         </ol>
         <p style="font-size: 15px; color: #475569;">
-            On Odoo 19 and later AnythingMCP uses Odoo's JSON-2 API; on Odoo 17 and 18 the JSON-RPC API.
+            AnythingMCP uses Odoo's JSON-2 API, available from Odoo 19 on. For Odoo 17 and 18, use this module's 17.0 or 18.0 version.
         </p>
     </div>
 </section>
@@ -45,8 +45,8 @@
     <div class="oe_row" style="max-width: 960px; margin: 0 auto;">
         <h3 style="color: #0f172a; font-weight: 700;">What the module does, and what it does not</h3>
         <ul style="font-size: 16px; color: #334155; line-height: 1.7;">
-            <li>It adds the AI Assistants block to General Settings: your Odoo address, database name and user id, and the two buttons.</li>
-            <li>It sends nothing on its own and collects no usage data. Only when you click "Open AnythingMCP" does your browser open AnythingMCP with your Odoo address, database name, user id and a marker that the link comes from this module (so AnythingMCP can count these setups), never the API key. What AnythingMCP stores is described in its <a href="https://anythingmcp.com/privacy">privacy policy</a>.</li>
+            <li>It adds the AI Assistants block with the two buttons to General Settings. It contains no Python code, only a view and two server actions, so Odoo Online can import it.</li>
+            <li>It sends nothing on its own and collects no usage data. Only when you click "Open AnythingMCP" does your browser open AnythingMCP with your Odoo address, database name and a marker that the link comes from this module (so AnythingMCP can count these setups), never the API key. What AnythingMCP stores is described in its <a href="https://anythingmcp.com/privacy">privacy policy</a>.</li>
             <li>It adds no models and changes no data. Uninstalling it removes the block; an API key you created stays under your user's Account Security until you revoke it.</li>
         </ul>
     </div>
@@ -57,8 +57,8 @@
         <h3 style="color: #0f172a; font-weight: 700;">Requirements</h3>
         <ul style="font-size: 16px; color: #334155; line-height: 1.7;">
             <li>An AnythingMCP account. <a href="https://anythingmcp.com/pricing">AnythingMCP Cloud</a> runs in Frankfurt (EU): 7-day trial, then from &euro;19 per month. AnythingMCP is also open source and can be <a href="https://github.com/HelpCode-ai/anythingmcp">self-hosted</a>; set the system parameter <code>anythingmcp_connector.url</code> to your instance's address.</li>
-            <li>Odoo 17, 18 or 19 (Community or Enterprise), self-hosted or on Odoo.sh. Your Odoo must be reachable over HTTPS from the internet for AnythingMCP Cloud.</li>
-            <li>On Odoo Online you cannot install third-party modules, but you do not need this one: follow the <a href="https://anythingmcp.com/guides/connect-odoo-to-claude">Odoo guide</a> and enter the same three values by hand.</li>
+            <li>Odoo 19 or later (Community or Enterprise): Odoo Online, Odoo.sh or self-hosted. A self-hosted Odoo must be reachable over HTTPS from the internet for AnythingMCP Cloud.</li>
+            <li>On Odoo Online, Odoo includes access through its external API in the Custom plan (see Odoo's pricing). Without the module you can also follow the <a href="https://anythingmcp.com/guides/connect-odoo-to-claude">Odoo guide</a> and enter the values by hand.</li>
         </ul>
     </div>
 </section>

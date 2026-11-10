@@ -39,6 +39,7 @@ msgid "Claude, ChatGPT and Copilot"
 msgstr "Claude, ChatGPT e Copilot"
 
 #. module: anythingmcp_connector
+#: model:ir.actions.server,name:anythingmcp_connector.action_new_api_key
 #: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
 msgid "Create an API key"
 msgstr "Crea una chiave API"
@@ -51,16 +52,7 @@ msgid ""
 msgstr "Crea una chiave API per il tuo utente. Scegli la durata più lunga disponibile: Odoo mostra la chiave una sola volta."
 
 #. module: anythingmcp_connector
-#: model:ir.model.fields,field_description:anythingmcp_connector.field_res_config_settings__anythingmcp_database
-msgid "Database name"
-msgstr "Nome del database"
-
-#. module: anythingmcp_connector
-#: model:ir.model.fields,field_description:anythingmcp_connector.field_res_config_settings__anythingmcp_odoo_url
-msgid "Odoo address"
-msgstr "Indirizzo di Odoo"
-
-#. module: anythingmcp_connector
+#: model:ir.actions.server,name:anythingmcp_connector.action_open_setup
 #: model_terms:ir.ui.view,arch_db:anythingmcp_connector.res_config_settings_view_form
 msgid "Open AnythingMCP"
 msgstr "Apri AnythingMCP"
@@ -71,8 +63,3 @@ msgid ""
 "Open AnythingMCP. The address and database are already filled in: paste the "
 "key and click \"Check and install\"."
 msgstr "Apri AnythingMCP. Indirizzo e database sono già compilati: incolla la chiave e fai clic su \"Check and install\"."
-
-#. module: anythingmcp_connector
-#: model:ir.model.fields,field_description:anythingmcp_connector.field_res_config_settings__anythingmcp_user_id
-msgid "User ID"
-msgstr "ID utente"
